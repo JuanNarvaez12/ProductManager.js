@@ -38,7 +38,7 @@ class ProductManager {
 
     async getProductById(code){
         const  product = JSON.parse(await fs.readFile(this.path, 'utf-8'))
-        const producto = product.findIndex(prod => prod.code === code)
+        const producto = product.find(prod => prod.code === code)
         console.log(producto);
     }
     async updateProduct (code, nuevoProducto){
@@ -70,5 +70,6 @@ class ProductManager {
         }
     }
 }
+
 
 
